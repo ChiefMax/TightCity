@@ -7,12 +7,14 @@ namespace Demo {
 		public int Width;
 		public int Depth;
 		public int HeightRemaining;
+        public int MinHeight = 40;
 
-		public void Initialize(int Width, int Depth, int HeightRemaining) {
+        public void Initialize(int Width, int Depth, int HeightRemaining, int MinHeight) {
 			this.Width=Width;
 			this.Depth=Depth;
 			this.HeightRemaining=HeightRemaining;
-		}
+            this.MinHeight = MinHeight;
+        }
 
 		// (offset) values for the next layer:
 		int newWidth;
@@ -73,11 +75,11 @@ namespace Demo {
 			double randomValue = param.Rand.NextDouble();
 			if (randomValue<param.RoofContinueChance || HeightRemaining <= 0) { // continue with the roof
 				Roof nextRoof = CreateSymbol<Roof>("roof");
-				nextRoof.Initialize(newWidth, newDepth, HeightRemaining);
+				nextRoof.Initialize(newWidth, newDepth, HeightRemaining,MinHeight);
 				nextRoof.Generate(param.buildDelay);
 			} else { // continue with a stock
 				Stock nextStock = CreateSymbol<Stock>("stock");
-				nextStock.Initialize(newWidth, newDepth, HeightRemaining);
+				nextStock.Initialize(newWidth, newDepth, HeightRemaining,MinHeight);
 				nextStock.Generate(param.buildDelay);
 			}
 		}

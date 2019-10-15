@@ -13,14 +13,14 @@ namespace Demo {
 		}
 
 		void Update() {
-			if (Input.GetKeyDown(BuildKey)) {
+			//if (this.enabled/*Input.GetKeyDown(BuildKey)*/) {
 				if (parameters!=null) {
 					parameters.ResetRandom();
 				}
 				if (Root!=null) {
 					Root.Generate();
 				}
-			}
+			//}
 		}
 	}
 }
