@@ -7,11 +7,13 @@ namespace Demo {
 		public int Width;
 		public int Depth;
 		public int HeightRemaining=0;
+        public int MinHeight = 40;
 		
-		public void Initialize(int Width, int Depth, int HeightRemaining) {
+		public void Initialize(int Width, int Depth, int HeightRemaining, int MinHeight) {
 			this.Width=Width;
 			this.Depth=Depth;
 			this.HeightRemaining=HeightRemaining;
+            this.MinHeight = MinHeight;
 		}
 
 		protected override void Execute() {
@@ -46,18 +48,18 @@ namespace Demo {
 					param.wallStyle,
 					param.wallPattern
 				);
-				newRow.Generate();
+                newRow.Generate();
 			}		
 
 			double randomValue = param.Rand.NextDouble();
 
-			if (HeightRemaining > 0 && randomValue < param.StockContinueChance) {
+			if (HeightRemaining > 0 && randomValue < param.StockContinueChance && MinHeight > 0) {
 				Stock nextStock = CreateSymbol<Stock>("stock", new Vector3(0, 1, 0), Quaternion.identity, transform);
-				nextStock.Initialize(Width, Depth, HeightRemaining-1);
+				nextStock.Initialize(Width, Depth, HeightRemaining-1,MinHeight-1);
 				nextStock.Generate(param.buildDelay);
 			} else {
 				Roof nextRoof = CreateSymbol<Roof>("roof", new Vector3(0, 1, 0), Quaternion.identity, transform);
-				nextRoof.Initialize(Width, Depth, HeightRemaining-1);
+				nextRoof.Initialize(Width, Depth, HeightRemaining-1,MinHeight-1);
 				nextRoof.Generate(param.buildDelay);
 			}
 		}
