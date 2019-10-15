@@ -11,14 +11,13 @@ GameObject:
   - component: {fileID: 7111001611726270049}
   - component: {fileID: 7111001611726270048}
   - component: {fileID: 7111001611726270051}
-  - component: {fileID: 7111001611726270054}
   - component: {fileID: 8424267092657201308}
   m_Layer: 0
   m_Name: DemoBuildingRoot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &7111001611726270049
 Transform:
@@ -48,8 +47,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   seed: 0
   buildDelay: 0.1
-  RoofContinueChance: 0.5
-  StockContinueChance: 0.2
+  RoofContinueChance: 0.3
+  StockContinueChance: 0.9
   wallStyle:
   - {fileID: -927199367670048503, guid: f5cdadf2c9dc71f42a988559d87d56a9, type: 3}
   - {fileID: -927199367670048503, guid: 7f20108dff9844c4c916296ea27292e1, type: 3}
@@ -69,22 +68,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 227e9f8913edc8f4d8c4171977713435, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Width: 8
-  Depth: 7
-  HeightRemaining: 50
---- !u!114 &7111001611726270054
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7111001611726270050}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b0e8d74a1992e084e92c17c28a336007, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  BuildKey: 32
+  Width: 10
+  Depth: 10
+  HeightRemaining: 150
+  MinHeight: 40
 --- !u!114 &8424267092657201308
 MonoBehaviour:
   m_ObjectHideFlags: 0
