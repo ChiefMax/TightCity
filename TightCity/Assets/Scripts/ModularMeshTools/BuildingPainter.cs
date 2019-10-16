@@ -28,6 +28,8 @@ namespace Demo {
 				return;
 
 			GameObject house = Instantiate(HousePrefab);
+            house.transform.position = transform.position;
+            house.transform.parent = transform;
 			//house.transform.localPosition = position;
 			//house.transform.localRotation = orientation;
 

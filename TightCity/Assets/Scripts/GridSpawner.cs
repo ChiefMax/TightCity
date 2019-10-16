@@ -39,6 +39,9 @@ public class GridSpawner : MonoBehaviour
                 GameObject clone = Instantiate(prefabToSpawn, 
                     transform.position + gridOrigin + new Vector3(gridOffset * x, 0, gridOffset * z), transform.rotation);
                 clone.transform.SetParent(this.transform);
+                builderPainter = clone.GetComponent<BuildingPainter>();
+                if(builderPainter != null)
+                  builderPainter.CreateHouse();
             }
         }
     }
