@@ -14,15 +14,6 @@ public class GridSpawner : MonoBehaviour
     public bool generateOnEnable;
     public BuildingPainter builderPainter;
 
-
-    void OnEnable()
-    {
-        if (generateOnEnable)
-        {
-            Generate();
-        }
-    }
-
     public void Generate()
     {
         SpawnGrid();
@@ -45,6 +36,4 @@ public class GridSpawner : MonoBehaviour
             }
         }
     }
-
-    
 }
