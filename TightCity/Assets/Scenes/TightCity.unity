@@ -202,6 +202,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: DemoBuildingRoot
       objectReference: {fileID: 0}
+    - target: {fileID: 7111001611726270050, guid: 643ade6d575be7e4ebdb898f3f38e1ba,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7111001611726270049, guid: 643ade6d575be7e4ebdb898f3f38e1ba,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -275,6 +280,7 @@ GameObject:
   m_Component:
   - component: {fileID: 945307023}
   - component: {fileID: 945307024}
+  - component: {fileID: 945307025}
   m_Layer: 0
   m_Name: Grid
   m_TagString: Untagged
@@ -308,15 +314,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea5724b8085470c4684121a923bde99a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gridX: 5
-  gridZ: 5
+  gridX: 9
+  gridZ: 9
   prefabToSpawn: {fileID: 2263304873891759396, guid: 48589b205f976b74787706163253f518,
     type: 3}
-  gridOrigin: {x: -18, y: 0, z: -18}
+  gridOrigin: {x: -45, y: 0, z: -45}
   gridOffset: 10
   generateOnEnable: 1
   builderPainter: {fileID: 0}
-  objectsDestroy: []
+--- !u!114 &945307025
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 945307022}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37ba8645f5a9ea942961090a6c54a0ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1090950695
 GameObject:
   m_ObjectHideFlags: 0

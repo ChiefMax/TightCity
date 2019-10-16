@@ -57,6 +57,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\DestroyChildObjGUI.cs" />
+    <Compile Include="Assets\Scripts\DestroyChildrenObj.cs" />
     <Compile Include="Assets\Scripts\EditorBuildingGenerator.cs" />
     <Compile Include="Assets\Scripts\ExampleGrammars\Building\BuildingParameters.cs" />
     <Compile Include="Assets\Scripts\ExampleGrammars\Building\Roof.cs" />
