@@ -12,7 +12,7 @@ public class GeneratedObjectControl : MonoBehaviour
 
     //public PerlinGenerator perlinGenerator;
     public GridSpawner gridSpawner;
-    public BuildingPainter painter;
+    //public BuildingPainter painter;
 
     void Awake()
     {
@@ -31,30 +31,19 @@ public class GeneratedObjectControl : MonoBehaviour
         generatedObjects.Add(objectToAdd);
     }
 
-    // Update is called once per frame
-    //void Update()
-    //{
-    //    if (Input.GetButtonDown("Jump"))
-    //    {
-    //        ClearAllObjects();
-    //        Generate();
-            
-    //    }
-        
-    //    if (Input.GetKeyDown(KeyCode.R))
-    //    {
-    //        SceneManager.LoadScene(0);
-    //    }
-
-    //}
 
     public void Generate()
     {
         //perlinGenerator.Generate();
         Debug.Log("Prepare to generate");
         gridSpawner.Generate();
-        painter.CreateHouse();
+        //painter.CreateHouse();
         Debug.Log("Done generating");
+    }
+
+    public void Remove()
+    {
+        gridSpawner.RemoveAllClusters();
     }
 
 

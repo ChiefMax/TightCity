@@ -31,6 +31,12 @@ namespace Demo {
                 generate.Generate();
             }
 
+            if (GUILayout.Button("Remove"))
+            {
+                //targetPainter.CreateHouse(Random.onUnitSphere);
+                generate.Remove();
+            }
+
         }
 	}
 }

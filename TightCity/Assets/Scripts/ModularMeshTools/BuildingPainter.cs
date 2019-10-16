@@ -13,15 +13,15 @@ namespace Demo {
 			if (Input.GetMouseButtonDown(0) && Input.GetKey(KeyCode.LeftShift)) {
 				RaycastHit hit;
 				if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit)) {
-					CreateHouse(/*hit.point*/);
+					//CreateHouse(/*hit.point*/);
 				}
 			}
 		}
 
-        void Awake()
-        {
-            CreateHouse();
-        }
+        //void Awake()
+        //{
+        //    CreateHouse();
+        //}
 
 		public void CreateHouse(/*Vector3 position, Quaternion orientation=new Quaternion()*/) {
 			if (Width==0 || Depth==0)

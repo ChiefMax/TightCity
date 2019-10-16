@@ -13,13 +13,14 @@ public class GridSpawner : MonoBehaviour
     public float gridOffset = 2f;
     public bool generateOnEnable;
     public BuildingPainter builderPainter;
+    public List<GameObject> objectsDestroy;
 
 
     void OnEnable()
     {
         if (generateOnEnable)
         {
-            Generate();
+            //Generate();
         }
     }
 
@@ -42,9 +43,22 @@ public class GridSpawner : MonoBehaviour
                 builderPainter = clone.GetComponent<BuildingPainter>();
                 if(builderPainter != null)
                   builderPainter.CreateHouse();
+                AddToListForDestroy(clone);
             }
         }
     }
 
-    
+    public void AddToListForDestroy(GameObject gameObject)
+    {
+        objectsDestroy.Add(gameObject);
+    }
+
+    public void RemoveAllClusters()
+    {
+        foreach (var item in objectsDestroy)
+        {
+            objectsDestroy.Remove(item);
+            DestroyImmediate(item);
+        }
+    }
 }
