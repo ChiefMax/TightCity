@@ -316,7 +316,7 @@ MonoBehaviour:
   gridOrigin: {x: -18, y: 0, z: -18}
   gridOffset: 10
   generateOnEnable: 1
-  builderPainter: {fileID: 600450119}
+  builderPainter: {fileID: 0}
 --- !u!1 &1090950695
 GameObject:
   m_ObjectHideFlags: 0
