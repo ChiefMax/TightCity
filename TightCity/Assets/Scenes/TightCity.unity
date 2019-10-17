@@ -129,7 +129,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 600450120}
-  - component: {fileID: 600450119}
   - component: {fileID: 600450121}
   m_Layer: 0
   m_Name: Builder
@@ -138,26 +137,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &600450119
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 600450118}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b1e3fd4c881973847a97b5995c48ca74, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  HousePrefab: {fileID: 799359627}
-  Width: 5
-  Depth: 5
-  wallStyles:
-  - {fileID: 11400000, guid: ab26ccdf6fcc15f4288f24fa8557d143, type: 2}
-  - {fileID: 11400000, guid: 8bac2b966f5f35e4982d1568569638f8, type: 2}
-  roofStyle:
-  - {fileID: -927199367670048503, guid: 36fe2941e38d2b141b2296b31a58496b, type: 3}
 --- !u!4 &600450120
 Transform:
   m_ObjectHideFlags: 0
@@ -264,12 +243,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 643ade6d575be7e4ebdb898f3f38e1ba, type: 3}
---- !u!1 &799359627 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7111001611726270050, guid: 643ade6d575be7e4ebdb898f3f38e1ba,
-    type: 3}
-  m_PrefabInstance: {fileID: 799359626}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &945307022
 GameObject:
   m_ObjectHideFlags: 0
