@@ -110,7 +110,6 @@ MonoBehaviour:
   Width: 5
   Depth: 5
   wallStyles:
-  - {fileID: 11400000, guid: ab26ccdf6fcc15f4288f24fa8557d143, type: 2}
-  - {fileID: 11400000, guid: 8bac2b966f5f35e4982d1568569638f8, type: 2}
+  - {fileID: 11400000, guid: 92d11951a5d56714bbf04bd35cc14841, type: 2}
   roofStyle:
   - {fileID: -927199367670048503, guid: 36fe2941e38d2b141b2296b31a58496b, type: 3}
