@@ -29,24 +29,37 @@ namespace Demo {
 			for (int i = 0; i<4; i++) {
 				Vector3 localPosition = new Vector3();
 				switch (i) {
-					case 0:
-						localPosition = new Vector3(-(Width-1)*0.5f, 0, 0); // left
-						break;
-					case 1:
-						localPosition = new Vector3(0, 0, (Depth-1)*0.5f); // back
-						break;
-					case 2:
-						localPosition = new Vector3((Width-1)*0.5f, 0, 0); // right
-						break;
-					case 3:
-						localPosition = new Vector3(0, 0, -(Depth-1)*0.5f); // front
-						break;
-				}
+                    //case 0:
+                    //    localPosition = new Vector3((Width - 1) * 0.5f, 0, 0); // left
+                    //    break;
+                    //case 1:
+                    //    localPosition = new Vector3(0, 0, -(Depth - 1) * 0.5f); // back
+                    //    break;
+                    //case 2:
+                    //    localPosition = new Vector3(-(Width - 1) * 0.5f, 0, 0); // right
+                    //    break;
+                    //case 3:
+                    //    localPosition = new Vector3(0, 0, (Depth - 1) * 0.5f/*0*/); // front
+                    //    break;
+                    case 0:
+                        localPosition = new Vector3(/*(Width - 1) * 0.5f*/0, 0, 0); // left
+                        break;
+                    case 1:
+                        localPosition = new Vector3(2, 0, -(Depth - 1) * 0.5f); // back
+                        break;
+                    case 2:
+                        localPosition = new Vector3(/*-(Width - 1) * 0.5f*/0, 0, -(Width - 1) /** 2f*/); // right
+                        break;
+                    case 3:
+                        localPosition = new Vector3(-2, 0, /*(Depth-1)*0.5f*/-2); // front
+                        break;
+                }
 				Row newRow = CreateSymbol<Row>("wall", localPosition, Quaternion.Euler(0, i*90, 0), transform);
 				newRow.Initialize(
 					i%2==1 ? Width : Depth,
 					param.wallStyle,
-					param.wallPattern
+					param.wallPattern,
+                    new Vector3(1,0,0)
 				);
                 newRow.Generate();
 			}		
@@ -58,9 +71,9 @@ namespace Demo {
 				nextStock.Initialize(Width, Depth, HeightRemaining-1,MinHeight-1);
 				nextStock.Generate(param.buildDelay);
 			} else {
-				Roof nextRoof = CreateSymbol<Roof>("roof", new Vector3(0, 1, 0), Quaternion.identity, transform);
-				nextRoof.Initialize(Width, Depth, HeightRemaining-1,MinHeight-1);
-				nextRoof.Generate(param.buildDelay);
+				//Roof nextRoof = CreateSymbol<Roof>("roof", new Vector3(0, 1, 0), Quaternion.identity, transform);
+				//nextRoof.Initialize(Width, Depth, HeightRemaining-1,MinHeight-1);
+				//nextRoof.Generate(param.buildDelay);
 			}
 		}
 	}
