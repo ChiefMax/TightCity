@@ -59,7 +59,7 @@ namespace Demo {
 							Quaternion.Euler(0,0,0),
 							transform
 						);
-						flatRoof.Initialize(Width, param.roofStyle,null,new Vector3(1,0,0));
+						flatRoof.Initialize(Width, param.roofStyle,null,new Vector3(0,0,1));
 						flatRoof.Generate();
 					}
 					newDepth-=2;
