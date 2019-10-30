@@ -66,8 +66,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 227e9f8913edc8f4d8c4171977713435, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Width: 5
-  Depth: 5
+  Width: 3
+  Depth: 3
   HeightRemaining: 60
   MinHeight: 40
 --- !u!114 &-7384735527720399827
@@ -84,7 +84,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   seed: 0
   buildDelay: 0.1
-  RoofContinueChance: 0.3
+  RoofContinueChance: 0.9
   StockContinueChance: 0.9
   wallStyle:
   - {fileID: -927199367670048503, guid: f5cdadf2c9dc71f42a988559d87d56a9, type: 3}
