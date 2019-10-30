@@ -47,8 +47,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   seed: 0
   buildDelay: 0.1
-  RoofContinueChance: 0.3
-  StockContinueChance: 0.9
+  RoofContinueChance: 0.9
+  StockContinueChance: 0.98
   wallStyle:
   - {fileID: -927199367670048503, guid: f5cdadf2c9dc71f42a988559d87d56a9, type: 3}
   - {fileID: -927199367670048503, guid: 7f20108dff9844c4c916296ea27292e1, type: 3}

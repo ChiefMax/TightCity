@@ -34,7 +34,7 @@ namespace Demo {
 		void CreateFlatRoofPart() {
 			BuildingParameters param = (BuildingParameters)parameters;
 
-			int side = param.Rand.Next(2);
+			int side = 1/*param.Rand.Next(2)*/;
 			Row flatRoof;
 
 			switch (side) {
@@ -55,11 +55,11 @@ namespace Demo {
 				case 1:
 					for (int i = 0; i<2; i++) {
 						flatRoof = CreateSymbol<Row>("roofStrip",
-							new Vector3(0,0,(Depth-1)*(i-0.5f)),
+							new Vector3(-(Depth - 1) * (i - 0.5f), 0,0/*(Depth-1)*(i-0.5f)*/),
 							Quaternion.Euler(0,0,0),
 							transform
 						);
-						flatRoof.Initialize(Width, param.roofStyle,null,new Vector3(0,0,1));
+						flatRoof.Initialize(Width, param.roofStyle,null,new Vector3(1,0,0));
 						flatRoof.Generate();
 					}
 					newDepth-=2;
