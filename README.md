@@ -9,3 +9,7 @@ Source: https://www.cyberpunk.net/us/en/
 ![sdf](TightCity/PromotionalImages/ProgressFirst.png)
 
 This is our first iteration of our prototype.
+
+![sdf](TightCity/PromotionalImages/ProgressSecond.png)
+
+Now with higher buildings and even tighter grid.
