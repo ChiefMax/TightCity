@@ -71,9 +71,9 @@ namespace Demo {
 				nextStock.Initialize(Width, Depth, HeightRemaining-1,MinHeight-1);
 				nextStock.Generate(param.buildDelay);
 			} else {
-                //Roof nextRoof = CreateSymbol<Roof>("roof", new Vector3(0, 1, 0), Quaternion.identity, transform);
-                //nextRoof.Initialize(Width, Depth, HeightRemaining - 1, MinHeight - 1);
-                //nextRoof.Generate(param.buildDelay);
+                Roof nextRoof = CreateSymbol<Roof>("roof", new Vector3(0, 1, 0), Quaternion.identity, transform);
+                nextRoof.Initialize(Width, Depth, HeightRemaining - 1, MinHeight - 1);
+                nextRoof.Generate(param.buildDelay);
             }
 		}
 	}

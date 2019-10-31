@@ -34,7 +34,7 @@ namespace Demo {
 		void CreateFlatRoofPart() {
 			BuildingParameters param = (BuildingParameters)parameters;
 
-			int side = 1/*param.Rand.Next(2)*/;
+			int side = param.Rand.Next(2);
 			Row flatRoof;
 
 			switch (side) {

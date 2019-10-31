@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: OurownBuilding
   m_EditorClassIdentifier: 
   wallParts:
-  - {fileID: -927199367670048503, guid: 7a815f65959b9554a87ed5e4ba825972, type: 3}
+  - {fileID: -927199367670048503, guid: b85a7601f23b4ce4b9a43aeb1158d6bd, type: 3}
