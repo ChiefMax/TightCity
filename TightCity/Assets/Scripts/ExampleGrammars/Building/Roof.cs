@@ -42,7 +42,7 @@ namespace Demo {
 				case 0:
 					for (int i = 0; i<2; i++) {
 						flatRoof = CreateSymbol<Row>("roofStrip",
-							new Vector3((Width-1)*(i-0.5f), 0, 0),
+							new Vector3(/*-(Width-1)*(i-0.5f)*/0, 0, -(Width - 1) * (i - 0.5f)),
 							Quaternion.identity,
 							transform
 						);
@@ -55,7 +55,7 @@ namespace Demo {
 				case 1:
 					for (int i = 0; i<2; i++) {
 						flatRoof = CreateSymbol<Row>("roofStrip",
-							new Vector3(-(Depth - 1) * (i - 0.5f), 0,0/*(Depth-1)*(i-0.5f)*/),
+							new Vector3(/*(Depth - 1) * (i - 0.5f)*/0, 0, -(Depth - 1) * (i - 0.5f)),
 							Quaternion.Euler(0,0,0),
 							transform
 						);
