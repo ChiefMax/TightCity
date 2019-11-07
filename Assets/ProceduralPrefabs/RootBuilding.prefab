@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7111001611726270051}
   - component: {fileID: 8424267092657201308}
   m_Layer: 0
-  m_Name: DemoBuildingRoot
+  m_Name: RootBuilding
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -47,8 +47,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   seed: 0
   buildDelay: 0.1
-  RoofContinueChance: 1
-  StockContinueChance: 0.5
+  RoofContinueChance: 0.5
+  StockContinueChance: 0.9
   wallStyle:
   - {fileID: -927199367670048503, guid: f5cdadf2c9dc71f42a988559d87d56a9, type: 3}
   - {fileID: -927199367670048503, guid: 7f20108dff9844c4c916296ea27292e1, type: 3}
@@ -70,8 +70,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Width: 10
   Depth: 10
-  HeightRemaining: 75
+  HeightRemaining: 50
   MinHeight: 30
+  roofPrefab: {fileID: 0}
 --- !u!114 &8424267092657201308
 MonoBehaviour:
   m_ObjectHideFlags: 0
