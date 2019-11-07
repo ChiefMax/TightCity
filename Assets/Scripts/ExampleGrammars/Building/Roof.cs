@@ -34,21 +34,28 @@ namespace Demo {
 		void CreateFlatRoofPart() {
 			BuildingParameters param = (BuildingParameters)parameters;
 
-			int side = 1/*param.Rand.Next(2)*/;
+			int side = param.Rand.Next(2);
 			Row flatRoof;
 
 			switch (side) {
 				// Add two roof strips in depth direction
 				case 0:
 					for (int i = 0; i<2; i++) {
-						flatRoof = CreateSymbol<Row>("roofStrip",
-							new Vector3(/*-(Width-1)*(i-0.5f)*/0, 0, (Width - 1) * (i - 0.5f)),
-							Quaternion.identity,
-							transform
-						);
-						flatRoof.Initialize(Depth, param.roofStyle);
-						flatRoof.Generate();
-					}
+                        //flatRoof = CreateSymbol<Row>("roofStrip",
+                        //	new Vector3(/*-(Width-1)*(i-0.5f)*/0, 0, (Width - 1) * (i - 0.5f)),
+                        //	Quaternion.identity,
+                        //	transform
+                        //);
+                        //flatRoof.Initialize(Depth, param.roofStyle);
+                        //flatRoof.Generate();
+                        flatRoof = CreateSymbol<Row>("roofStrip",
+                            new Vector3(/*(Depth - 1) * (i - 0.5f)*/0, 0, -(Depth - 1) * (i - 0.5f)),
+                            Quaternion.Euler(0, 0, 0),
+                            transform
+                        );
+                        flatRoof.Initialize(Width, param.roofStyle, null, new Vector3(1, 0, 0));
+                        flatRoof.Generate();
+                    }
 					newWidth-=2;
 					break;
 				// Add two roof strips in width direction
@@ -74,7 +81,7 @@ namespace Demo {
 
 			double randomValue = param.Rand.NextDouble();
 			if (randomValue<param.RoofContinueChance || HeightRemaining <= 0) { // continue with the roof
-				Roof nextRoof = CreateSymbol<Roof>("roof");
+                Roof nextRoof = CreateSymbol<Roof>("roof");
 				nextRoof.Initialize(newWidth, newDepth, HeightRemaining,MinHeight);
 				nextRoof.Generate(param.buildDelay);
 			} /*else {*/ // continue with a stock

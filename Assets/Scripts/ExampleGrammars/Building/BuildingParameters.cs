@@ -3,7 +3,8 @@
 namespace Demo {
 	public class BuildingParameters : MonoBehaviour {
 		public int seed;
-		public float buildDelay;
+        [HideInInspector]
+        public float buildDelay;
 		public float RoofContinueChance;
 		public float StockContinueChance;
 
