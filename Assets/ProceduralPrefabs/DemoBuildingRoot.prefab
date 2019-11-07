@@ -47,8 +47,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   seed: 0
   buildDelay: 0.1
-  RoofContinueChance: 0.9
-  StockContinueChance: 0.98
+  RoofContinueChance: 1
+  StockContinueChance: 0.5
   wallStyle:
   - {fileID: -927199367670048503, guid: f5cdadf2c9dc71f42a988559d87d56a9, type: 3}
   - {fileID: -927199367670048503, guid: 7f20108dff9844c4c916296ea27292e1, type: 3}
@@ -70,8 +70,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Width: 10
   Depth: 10
-  HeightRemaining: 50
-  MinHeight: 15
+  HeightRemaining: 75
+  MinHeight: 30
 --- !u!114 &8424267092657201308
 MonoBehaviour:
   m_ObjectHideFlags: 0
