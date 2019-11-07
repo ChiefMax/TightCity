@@ -19,7 +19,7 @@ namespace Demo {
 			if (dir.magnitude!=0)
 				direction=dir;
 			else
-				direction=new Vector3(0, 0, 1);
+				direction=new Vector3(1, 0, 0);
 		}
 
 		protected override void Execute() {
