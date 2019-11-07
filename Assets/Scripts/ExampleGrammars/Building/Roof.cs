@@ -42,7 +42,7 @@ namespace Demo {
 				case 0:
 					for (int i = 0; i<2; i++) {
 						flatRoof = CreateSymbol<Row>("roofStrip",
-							new Vector3(/*-(Width-1)*(i-0.5f)*/0, 0, -(Width - 1) * (i - 0.5f)),
+							new Vector3(/*-(Width-1)*(i-0.5f)*/0, 0, (Width - 1) * (i - 0.5f)),
 							Quaternion.identity,
 							transform
 						);
@@ -77,11 +77,11 @@ namespace Demo {
 				Roof nextRoof = CreateSymbol<Roof>("roof");
 				nextRoof.Initialize(newWidth, newDepth, HeightRemaining,MinHeight);
 				nextRoof.Generate(param.buildDelay);
-			} else { // continue with a stock
-				Stock nextStock = CreateSymbol<Stock>("stock");
-				nextStock.Initialize(newWidth, newDepth, HeightRemaining,MinHeight);
-				nextStock.Generate(param.buildDelay);
-			}
+			} /*else {*/ // continue with a stock
+			//	Stock nextStock = CreateSymbol<Stock>("stock");
+			//	nextStock.Initialize(newWidth, newDepth, HeightRemaining,MinHeight);
+			//	nextStock.Generate(param.buildDelay);
+			//}
 		}
 	}
 }

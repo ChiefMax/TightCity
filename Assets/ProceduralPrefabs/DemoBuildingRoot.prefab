@@ -70,8 +70,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Width: 10
   Depth: 10
-  HeightRemaining: 150
-  MinHeight: 40
+  HeightRemaining: 50
+  MinHeight: 15
 --- !u!114 &8424267092657201308
 MonoBehaviour:
   m_ObjectHideFlags: 0
