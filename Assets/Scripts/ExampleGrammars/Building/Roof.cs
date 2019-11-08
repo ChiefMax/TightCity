@@ -2,93 +2,96 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Demo {
-	public class Roof : Shape {
-		public int Width;
-		public int Depth;
-		public int HeightRemaining;
+namespace Demo
+{
+    public class Roof : Shape
+    {
+        public int Width;
+        public int Depth;
+        public int HeightRemaining;
         public int MinHeight = 40;
 
-        public void Initialize(int Width, int Depth, int HeightRemaining, int MinHeight) {
-			this.Width=Width;
-			this.Depth=Depth;
-			this.HeightRemaining=HeightRemaining;
+        public void Initialize(int Width, int Depth, int HeightRemaining, int MinHeight)
+        {
+            this.Width = Width;
+            this.Depth = Depth;
+            this.HeightRemaining = HeightRemaining;
             this.MinHeight = MinHeight;
         }
 
-		// (offset) values for the next layer:
-		int newWidth;
-		int newDepth;
+        // (offset) values for the next layer:
+        int newWidth;
+        int newDepth;
 
-		protected override void Execute() {
-			if (Width==0 || Depth==0)
-				return;
+        protected override void Execute()
+        {
+            if (Width == 0 || Depth == 0)
+                return;
 
-			newWidth=Width;
-			newDepth=Depth;
+            newWidth = Width;
+            newDepth = Depth;
 
-			CreateFlatRoofPart();
-			CreateNextPart();
-		}
+            CreateFlatRoofPart();
+            CreateNextPart();
+        }
 
-		void CreateFlatRoofPart() {
-			BuildingParameters param = (BuildingParameters)parameters;
+        void CreateFlatRoofPart()
+        {
+            BuildingParameters param = (BuildingParameters)parameters;
 
-			int side = param.Rand.Next(2);
-			Row flatRoof;
+            int side = param.Rand.Next(2);
+            Row flatRoof;
 
-			switch (side) {
-				// Add two roof strips in depth direction
-				case 0:
-					for (int i = 0; i<2; i++) {
-                        //flatRoof = CreateSymbol<Row>("roofStrip",
-                        //	new Vector3(/*-(Width-1)*(i-0.5f)*/0, 0, (Width - 1) * (i - 0.5f)),
-                        //	Quaternion.identity,
-                        //	transform
-                        //);
-                        //flatRoof.Initialize(Depth, param.roofStyle);
-                        //flatRoof.Generate();
-                        flatRoof = CreateSymbol<Row>("roofStrip",
-                            new Vector3(/*(Depth - 1) * (i - 0.5f)*/0, 0, -(Depth - 1) * (i - 0.5f)),
+            for (int i = 0; i < 5; i++)
+            {
+                Vector3 localPosition = new Vector3();
+                switch (i)
+                {
+                    case 0:
+                        localPosition = new Vector3(0, 0, 0); // left
+                        break;
+                    case 1:
+                        localPosition = new Vector3(0, 0, -2); // back
+                        break;
+                    case 2:
+                        localPosition = new Vector3(0, 0, -1); // right
+                        break;
+                    case 3:
+                        localPosition = new Vector3(0, 0, -3); // front
+                        break;
+                    case 4:
+                        localPosition = new Vector3(0, 0, -4); // left
+                        break;
+                }
+                flatRoof = CreateSymbol<Row>("roofStrip",
+                            localPosition,
                             Quaternion.Euler(0, 0, 0),
                             transform
-                        );
-                        flatRoof.Initialize(Width, param.roofStyle, null, new Vector3(1, 0, 0));
-                        flatRoof.Generate();
-                    }
-					newWidth-=2;
-					break;
-				// Add two roof strips in width direction
-				case 1:
-					for (int i = 0; i<2; i++) {
-						flatRoof = CreateSymbol<Row>("roofStrip",
-							new Vector3(/*(Depth - 1) * (i - 0.5f)*/0, 0, -(Depth - 1) * (i - 0.5f)),
-							Quaternion.Euler(0,0,0),
-							transform
-						);
-						flatRoof.Initialize(Width, param.roofStyle,null,new Vector3(1,0,0));
-						flatRoof.Generate();
-					}
-					newDepth-=2;
-					break;
-			}
-		}
+                );
+                flatRoof.Initialize(Width, param.roofStyle, null, new Vector3(1, 0, 0));
+                flatRoof.Generate();
+            }
+        }
 
-		void CreateNextPart() {
-			if (newWidth<=0 || newDepth<=0)
-				return;
-			BuildingParameters param = (BuildingParameters)parameters;
+        void CreateNextPart()
+        {
+            if (newWidth <= 0 || newDepth <= 0)
+                return;
+            BuildingParameters param = (BuildingParameters)parameters;
 
-			double randomValue = param.Rand.NextDouble();
-			if (randomValue<param.RoofContinueChance || HeightRemaining <= 0) { // continue with the roof
+            double randomValue = param.Rand.NextDouble();
+            if (randomValue < param.RoofContinueChance || HeightRemaining <= 0)
+            { // continue with the roof
                 Roof nextRoof = CreateSymbol<Roof>("roof");
-				nextRoof.Initialize(newWidth, newDepth, HeightRemaining,MinHeight);
-				nextRoof.Generate(param.buildDelay);
-			} /*else {*/ // continue with a stock
-			//	Stock nextStock = CreateSymbol<Stock>("stock");
-			//	nextStock.Initialize(newWidth, newDepth, HeightRemaining,MinHeight);
-			//	nextStock.Generate(param.buildDelay);
-			//}
-		}
-	}
+                nextRoof.Initialize(newWidth, newDepth, HeightRemaining, MinHeight);
+                nextRoof.Generate(param.buildDelay);
+            }
+            //else
+            //{ // continue with a stock
+            //    Stock nextStock = CreateSymbol<Stock>("stock");
+            //    nextStock.Initialize(newWidth, newDepth, HeightRemaining, MinHeight);
+            //    nextStock.Generate(param.buildDelay);
+            //}
+        }
+    }
 }
