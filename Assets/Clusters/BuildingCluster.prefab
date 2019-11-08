@@ -112,5 +112,7 @@ MonoBehaviour:
   wallStyles:
   - {fileID: 11400000, guid: 92d11951a5d56714bbf04bd35cc14841, type: 2}
   - {fileID: 11400000, guid: 61aefba643f3c6b418190228bf68312e, type: 2}
+  - {fileID: 11400000, guid: 2ac6465f054b2c84b85753db808f8ad2, type: 2}
   roofStyle:
   - {fileID: -927199367670048503, guid: a0813038672b633419aed6172cbdf7b8, type: 3}
+  - {fileID: -927199367670048503, guid: f32e6cb3d3e70ee44a9bcf3dd35808e8, type: 3}
