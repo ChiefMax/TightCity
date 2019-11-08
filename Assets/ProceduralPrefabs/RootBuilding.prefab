@@ -55,7 +55,7 @@ MonoBehaviour:
   - {fileID: -927199367670048503, guid: 109583644c818754b847acfa7a5416f3, type: 3}
   wallPattern: 
   roofStyle:
-  - {fileID: -927199367670048503, guid: a0813038672b633419aed6172cbdf7b8, type: 3}
+  - {fileID: -927199367670048503, guid: 46c9f79f8f133d54bb8833fd0bcd1f4f, type: 3}
 --- !u!114 &7111001611726270051
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -72,7 +72,6 @@ MonoBehaviour:
   Depth: 10
   HeightRemaining: 50
   MinHeight: 30
-  roofPrefab: {fileID: 0}
 --- !u!114 &8424267092657201308
 MonoBehaviour:
   m_ObjectHideFlags: 0
