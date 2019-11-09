@@ -13,9 +13,19 @@ namespace Demo {
 
 		public int[,] grid;
 
-		// Basically, in the next table we count the number of ones in the binary representation.
-		// However when there are two ones, we distinguish two cases: adjacent or not.
-		int[] prefabIndex = new int[] {
+        protected override void ExecuteAsian()
+        {
+
+        }
+
+        protected override void ExecuteAsianRoof()
+        {
+
+        }
+
+        // Basically, in the next table we count the number of ones in the binary representation.
+        // However when there are two ones, we distinguish two cases: adjacent or not.
+        int[] prefabIndex = new int[] {
 			0,	// 0 = 0000		case 0: no ones
 			1,	// 1 = 0001		case 1: a single one
 			1,	// 2 = 0010

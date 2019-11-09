@@ -14,7 +14,17 @@ namespace Demo {
 			HeightRemaining=pHeightRemaining;
 		}
 
-		protected override void Execute() {
+        protected override void ExecuteAsian()
+        {
+
+        }
+
+        protected override void ExecuteAsianRoof()
+        {
+
+        }
+
+        protected override void Execute() {
 			// Spawn the (box) prefab as child of this game object:
 			// (Optional parameters: localPosition, localRotation, alternative parent)
 			GameObject box = SpawnPrefab(prefab);

@@ -37,7 +37,17 @@ namespace Demo {
 			CreateNextPart();
 		}
 
-		void CreateFlatRoofPart() {
+        protected override void ExecuteAsian()
+        {
+
+        }
+
+        protected override void ExecuteAsianRoof()
+        {
+
+        }
+
+        void CreateFlatRoofPart() {
 			// Randomly create two roof strips in depth direction or in width direction:
 			int side = (int)(Random.value*2);
 			SimpleRow flatRoof;

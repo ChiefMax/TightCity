@@ -48,7 +48,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gridX: 8
   gridZ: 8
-  prefabToSpawn: {fileID: 7599520894186034001, guid: 3d11051246623764bb93e3560c4c8911,
+  prefabToSpawn: {fileID: 7111001611726270050, guid: 643ade6d575be7e4ebdb898f3f38e1ba,
     type: 3}
   gridOrigin: {x: 0, y: 0, z: 0}
   gridOffset: 1
@@ -90,9 +90,15 @@ MonoBehaviour:
   - {fileID: -927199367670048503, guid: f5cdadf2c9dc71f42a988559d87d56a9, type: 3}
   - {fileID: -927199367670048503, guid: 109583644c818754b847acfa7a5416f3, type: 3}
   - {fileID: -927199367670048503, guid: 7f20108dff9844c4c916296ea27292e1, type: 3}
+  wallStyleNormal:
+  - {fileID: -927199367670048503, guid: e2b497f29e4b8bf43a7ff5aa274a4389, type: 3}
+  wallStyleRoof:
+  - {fileID: -927199367670048503, guid: 46c9f79f8f133d54bb8833fd0bcd1f4f, type: 3}
   wallPattern: 
   roofStyle:
   - {fileID: -927199367670048503, guid: a0813038672b633419aed6172cbdf7b8, type: 3}
+  specialRoofStyle:
+  - {fileID: -927199367670048503, guid: f32e6cb3d3e70ee44a9bcf3dd35808e8, type: 3}
 --- !u!114 &-726122263122852380
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -115,4 +121,5 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 2ac6465f054b2c84b85753db808f8ad2, type: 2}
   roofStyle:
   - {fileID: -927199367670048503, guid: a0813038672b633419aed6172cbdf7b8, type: 3}
+  specialRoofStyle:
   - {fileID: -927199367670048503, guid: f32e6cb3d3e70ee44a9bcf3dd35808e8, type: 3}

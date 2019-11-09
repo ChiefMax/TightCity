@@ -22,7 +22,71 @@ namespace Demo {
 				direction=new Vector3(1, 0, 0);
 		}
 
-		protected override void Execute() {
+        protected override void ExecuteAsian()
+        {
+            if (Number <= 0)
+                return;
+            BuildingParameters param = (BuildingParameters)parameters;
+            if (pattern == null || pattern.Length == 0)
+            { // generate a pattern if needed
+                pattern = new int[Number];
+                for (int i = 0; i < Number; i++)
+                {
+                    if (param != null && param.Rand != null)
+                    {
+                        pattern[i] = param.Rand.Next(0, prefabs.Length);
+                    }
+                    else
+                    {
+                        pattern[i] = (int)(Random.value * prefabs.Length);
+                    }
+                }
+            }
+            for (int i = 0; i < Number; i++)
+            {           // spawn the prefabs
+                int index = pattern[i % pattern.Length] % prefabs.Length;
+
+                SpawnPrefab(prefabs[index],
+                    direction * (i - (Number - 1) / 2f),
+                    Quaternion.identity,
+                    transform
+                );
+            }
+        }
+
+        protected override void ExecuteAsianRoof()
+        {
+            if (Number <= 0)
+                return;
+            BuildingParameters param = (BuildingParameters)parameters;
+            if (pattern == null || pattern.Length == 0)
+            { // generate a pattern if needed
+                pattern = new int[Number];
+                for (int i = 0; i < Number; i++)
+                {
+                    if (param != null && param.Rand != null)
+                    {
+                        pattern[i] = param.Rand.Next(0, prefabs.Length);
+                    }
+                    else
+                    {
+                        pattern[i] = (int)(Random.value * prefabs.Length);
+                    }
+                }
+            }
+            for (int i = 0; i < Number; i++)
+            {           // spawn the prefabs
+                int index = pattern[i % pattern.Length] % prefabs.Length;
+
+                SpawnPrefab(prefabs[index],
+                    direction * (i - (Number - 1) / 2f),
+                    Quaternion.identity,
+                    transform
+                );
+            }
+        }
+
+        protected override void Execute() {
 			if (Number<=0)
 				return;
 			BuildingParameters param = (BuildingParameters)parameters;
@@ -36,15 +100,16 @@ namespace Demo {
 					}
 				}
 			}
-			for (int i=0;i<Number;i++) {			// spawn the prefabs
-				int index = pattern[i % pattern.Length] % prefabs.Length;
-				
-				SpawnPrefab(prefabs[index],
-					direction * (i - (Number-1)/2f),
-					Quaternion.identity, 
-					transform
-				);
-			}
-		}
+            for (int i = 0; i < Number; i++)
+            {           // spawn the prefabs
+                int index = pattern[i % pattern.Length] % prefabs.Length;
+
+                SpawnPrefab(prefabs[index],
+                    direction * (i - (Number - 1) / 2f),
+                    Quaternion.identity,
+                    transform
+                );
+            }
+        }
 	}
 }

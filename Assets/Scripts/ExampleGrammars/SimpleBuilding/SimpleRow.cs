@@ -29,5 +29,15 @@ namespace Demo {
 				);
 			}
 		}
-	}
+
+        protected override void ExecuteAsian()
+        {
+
+        }
+
+        protected override void ExecuteAsianRoof()
+        {
+
+        }
+    }
 }

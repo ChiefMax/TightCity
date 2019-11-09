@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 
 namespace Demo {
-	public class BuildingParameters : MonoBehaviour {
+	public class BuildingParametersAsian : MonoBehaviour {
 		public int seed;
         [HideInInspector]
         public float buildDelay;
@@ -9,9 +9,7 @@ namespace Demo {
 		public float StockContinueChance;
 
 		public GameObject[] wallStyle;
-        public GameObject[] wallStyleNormal;
-        public GameObject[] wallStyleRoof;
-        public int[] wallPattern;
+		public int[] wallPattern;
 
 		public GameObject[] roofStyle;
         public GameObject[] specialRoofStyle;

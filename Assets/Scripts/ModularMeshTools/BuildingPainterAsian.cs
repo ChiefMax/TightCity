@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 
 namespace Demo {
-	public class BuildingPainter : MonoBehaviour {
+	public class BuildingPainterAsian : MonoBehaviour {
 		public GameObject HousePrefab;
         public int Width;
 		public int Depth;
@@ -48,17 +48,9 @@ namespace Demo {
                 param.roofStyle = roofStyle;
             }
 
-            int decideToPlaceAsianBuilding = param.Rand.Next(7);
-            bool isAsian = false;
-
-            if (decideToPlaceAsianBuilding >= 5)
-            {
-                isAsian = true;
-            }
-
-            //print("Generating...");
-			houseBuilder.Generate(0, isAsian);
-            //print("Done...");
+            print("Generating...");
+			houseBuilder.Generate();
+            print("Done...");
         }
 	}
 }
