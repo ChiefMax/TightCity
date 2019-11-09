@@ -32,8 +32,8 @@ public class GeneratedObjectControl : MonoBehaviour
 
     public void Generate()
     {
-        Debug.Log("Prepare to generate");
+        //Debug.Log("Prepare to generate");
         gridSpawner.Generate();
-        Debug.Log("Done generating");
+        //Debug.Log("Done generating");
     }
 }
