@@ -35,6 +35,16 @@ namespace Demo
             CreateNextPart();
         }
 
+        protected override void ExecuteAsian()
+        {
+
+        }
+
+        protected override void ExecuteAsianRoof()
+        {
+
+        }
+
         void CreateFlatRoofPart()
         {
             BuildingParameters param = (BuildingParameters)parameters;
@@ -68,8 +78,22 @@ namespace Demo
                             Quaternion.Euler(0, 0, 0),
                             transform
                 );
-                flatRoof.Initialize(Width, param.roofStyle, null, new Vector3(1, 0, 0));
-                flatRoof.Generate();
+                for (int ii = 0; ii < 2; ii++)
+                {
+                    int decideAntenna = param.Rand.Next(5);
+
+                    if (decideAntenna % 2 >= 1)
+                    {
+                        flatRoof.Initialize(Width, param.specialRoofStyle, null, new Vector3(1, 0, 0));
+                        flatRoof.Generate();
+                    }
+                    else
+                    {
+                        flatRoof.Initialize(Width, param.roofStyle, null, new Vector3(1, 0, 0));
+                        flatRoof.Generate();
+                    }
+                }
+                
             }
         }
 

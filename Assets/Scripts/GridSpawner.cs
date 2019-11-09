@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class GridSpawner : MonoBehaviour
 {
@@ -27,6 +28,9 @@ public class GridSpawner : MonoBehaviour
         {
             for (int z = 0; z < gridZ; z++)
             {
+                System.Random rnd = new System.Random();
+                int randomBuilding = rnd.Next(2);
+
                 GameObject clone = Instantiate(prefabToSpawn, 
                     transform.position + gridOrigin + new Vector3(gridOffset * x, 0, gridOffset * z), transform.rotation);
                 clone.transform.SetParent(this.transform);

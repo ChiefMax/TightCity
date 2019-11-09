@@ -27,7 +27,12 @@ namespace Demo {
 			this.roofStyle=roofStyle;
 		}
 
-		protected override void Execute() {
+        protected override void ExecuteAsianRoof()
+        {
+
+        }
+
+        protected override void Execute() {
 			// Create four walls:
 			for (int i = 0; i<4; i++) {
 				Vector3 localPosition = new Vector3();
@@ -62,5 +67,10 @@ namespace Demo {
 				nextRoof.Generate(buildDelay);
 			}
 		}
-	}
+
+        protected override void ExecuteAsian()
+        {
+
+        }
+    }
 }

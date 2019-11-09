@@ -53,9 +53,15 @@ MonoBehaviour:
   - {fileID: -927199367670048503, guid: f5cdadf2c9dc71f42a988559d87d56a9, type: 3}
   - {fileID: -927199367670048503, guid: 7f20108dff9844c4c916296ea27292e1, type: 3}
   - {fileID: -927199367670048503, guid: 109583644c818754b847acfa7a5416f3, type: 3}
+  wallStyleNormal:
+  - {fileID: -927199367670048503, guid: e2b497f29e4b8bf43a7ff5aa274a4389, type: 3}
+  wallStyleRoof:
+  - {fileID: -927199367670048503, guid: 46c9f79f8f133d54bb8833fd0bcd1f4f, type: 3}
   wallPattern: 
   roofStyle:
-  - {fileID: -927199367670048503, guid: 46c9f79f8f133d54bb8833fd0bcd1f4f, type: 3}
+  - {fileID: -927199367670048503, guid: a0813038672b633419aed6172cbdf7b8, type: 3}
+  specialRoofStyle:
+  - {fileID: -927199367670048503, guid: f32e6cb3d3e70ee44a9bcf3dd35808e8, type: 3}
 --- !u!114 &7111001611726270051
 MonoBehaviour:
   m_ObjectHideFlags: 0
