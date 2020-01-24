@@ -28,22 +28,24 @@ namespace Demo
 
         private void AsianWallRoof(BuildingParameters param)
         {
+            int[] localPattern = { 1, 0, 0, 0, 0 };
+
             for (int i = 0; i < 4; i++)
             {
                 Vector3 localPosition = new Vector3();
                 switch (i)
                 {
                     case 0:
-                        localPosition = new Vector3(/*(Width - 1) * 0.5f*/0, 0, 0); // left
+                        localPosition = new Vector3(0, 0, 0); // left
                         break;
                     case 1:
                         localPosition = new Vector3(2, 0, -(Depth - 1) * 0.5f); // back
                         break;
                     case 2:
-                        localPosition = new Vector3(/*-(Width - 1) * 0.5f*/0, 0, -(Width - 1) /** 2f*/); // right
+                        localPosition = new Vector3(0, 0, -(Width - 1)); // right
                         break;
                     case 3:
-                        localPosition = new Vector3(-2, 0, /*(Depth-1)*0.5f*/-2); // front
+                        localPosition = new Vector3(-2, 0, -2); // front
                         break;
                 }
 
@@ -51,7 +53,7 @@ namespace Demo
                 roofRow.Initialize(
                     i % 2 == 1 ? Width : Depth,
                     param.wallStyleRoof,
-                    param.wallPattern,
+                    /*param.wallPattern*/localPattern,
                     new Vector3(1, 0, 0)
                 );
                 roofRow.Generate();
@@ -108,16 +110,16 @@ namespace Demo
                 switch (i)
                 {
                     case 0:
-                        localPosition = new Vector3(/*(Width - 1) * 0.5f*/0, 0, 0); // left
+                        localPosition = new Vector3(0, 0, 0); // left
                         break;
                     case 1:
                         localPosition = new Vector3(2, 0, -(Depth - 1) * 0.5f); // back
                         break;
                     case 2:
-                        localPosition = new Vector3(/*-(Width - 1) * 0.5f*/0, 0, -(Width - 1) /** 2f*/); // right
+                        localPosition = new Vector3(0, 0, -(Width - 1)); // right
                         break;
                     case 3:
-                        localPosition = new Vector3(-2, 0, /*(Depth-1)*0.5f*/-2); // front
+                        localPosition = new Vector3(-2, 0, -2); // front
                         break;
                 }
 
@@ -136,7 +138,7 @@ namespace Demo
 
             double randomValue = param.Rand.NextDouble();
 
-            if (HeightRemaining > 0 && randomValue < param.StockContinueChance && MinHeight > 0)
+            if (HeightRemaining > 0 && randomValue < param.StockContinueChance || MinHeight > 0)
             {
                 Stock nextStock = CreateSymbol<Stock>("stock", new Vector3(0, 1, 0), Quaternion.identity, transform);
                 nextStock.Initialize(Width, Depth, HeightRemaining - 1, MinHeight - 1);
@@ -153,7 +155,6 @@ namespace Demo
 
         protected override void Execute()
         {
-            // This is necessary for the start symbol of the grammar:
             if (parameters == null)
             {
                 parameters = GetComponent<BuildingParameters>();
@@ -169,16 +170,16 @@ namespace Demo
                 switch (i)
                 {
                     case 0:
-                        localPosition = new Vector3(/*(Width - 1) * 0.5f*/0, 0, 0); // left
+                        localPosition = new Vector3(0, 0, 0); // left
                         break;
                     case 1:
                         localPosition = new Vector3(2, 0, -(Depth - 1) * 0.5f); // back
                         break;
                     case 2:
-                        localPosition = new Vector3(/*-(Width - 1) * 0.5f*/0, 0, -(Width - 1) /** 2f*/); // right
+                        localPosition = new Vector3(0, 0, -(Width - 1) ); // right
                         break;
                     case 3:
-                        localPosition = new Vector3(-2, 0, /*(Depth-1)*0.5f*/-2); // front
+                        localPosition = new Vector3(-2, 0, -2); // front
                         break;
                 }
                 Row newRow = CreateSymbol<Row>("wall", localPosition, Quaternion.Euler(0, i * 90, 0), transform);

@@ -2,7 +2,8 @@
 
 namespace Demo {
 	public class BuildingParameters : MonoBehaviour {
-		public int seed;
+        [HideInInspector]
+        public int seed;
         [HideInInspector]
         public float buildDelay;
 		public float RoofContinueChance;
@@ -12,7 +13,7 @@ namespace Demo {
         public GameObject[] wallStyleNormal;
         public GameObject[] wallStyleRoof;
         public int[] wallPattern;
-
+        public int[] cornerPattern;
 		public GameObject[] roofStyle;
         public GameObject[] specialRoofStyle;
 

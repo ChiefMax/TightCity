@@ -84,8 +84,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   seed: 0
   buildDelay: 0.1
-  RoofContinueChance: 0.9
-  StockContinueChance: 0.9
+  RoofContinueChance: 0.05
+  StockContinueChance: 0.7
   wallStyle:
   - {fileID: -927199367670048503, guid: f5cdadf2c9dc71f42a988559d87d56a9, type: 3}
   - {fileID: -927199367670048503, guid: 109583644c818754b847acfa7a5416f3, type: 3}
@@ -95,6 +95,7 @@ MonoBehaviour:
   wallStyleRoof:
   - {fileID: -927199367670048503, guid: 46c9f79f8f133d54bb8833fd0bcd1f4f, type: 3}
   wallPattern: 
+  cornerPattern: 
   roofStyle:
   - {fileID: -927199367670048503, guid: a0813038672b633419aed6172cbdf7b8, type: 3}
   specialRoofStyle:
@@ -119,7 +120,9 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 92d11951a5d56714bbf04bd35cc14841, type: 2}
   - {fileID: 11400000, guid: 61aefba643f3c6b418190228bf68312e, type: 2}
   - {fileID: 11400000, guid: 2ac6465f054b2c84b85753db808f8ad2, type: 2}
+  - {fileID: 11400000, guid: e757f019733ca4047a07c34c0193dac6, type: 2}
   roofStyle:
   - {fileID: -927199367670048503, guid: a0813038672b633419aed6172cbdf7b8, type: 3}
-  specialRoofStyle:
   - {fileID: -927199367670048503, guid: f32e6cb3d3e70ee44a9bcf3dd35808e8, type: 3}
+  specialRoofStyle:
+  - {fileID: -927199367670048503, guid: a0813038672b633419aed6172cbdf7b8, type: 3}

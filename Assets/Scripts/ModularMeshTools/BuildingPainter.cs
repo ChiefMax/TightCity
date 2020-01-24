@@ -48,10 +48,10 @@ namespace Demo {
                 param.roofStyle = roofStyle;
             }
 
-            int decideToPlaceAsianBuilding = param.Rand.Next(7);
+            int decideToPlaceAsianBuilding = param.Rand.Next(10);
             bool isAsian = false;
 
-            if (decideToPlaceAsianBuilding >= 5)
+            if (decideToPlaceAsianBuilding >= 9)
             {
                 isAsian = true;
             }
