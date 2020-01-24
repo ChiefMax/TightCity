@@ -10,6 +10,8 @@ namespace Demo
         public int Depth;
         public int HeightRemaining;
         public int MinHeight = 40;
+        bool oneStrip = false;
+        int counter = 0;
 
         public void Initialize(int Width, int Depth, int HeightRemaining, int MinHeight)
         {
@@ -52,6 +54,8 @@ namespace Demo
             int side = param.Rand.Next(2);
             Row flatRoof;
 
+            int[] localPattern = { 0, 0, 1, 0, 0 };
+
             for (int i = 0; i < 5; i++)
             {
                 Vector3 localPosition = new Vector3();
@@ -78,22 +82,24 @@ namespace Demo
                             Quaternion.Euler(0, 0, 0),
                             transform
                 );
-                for (int ii = 0; ii < 2; ii++)
-                {
-                    int decideAntenna = param.Rand.Next(5);
+                //for (int ii = 0; ii < 2; ii++)
+                //{
 
-                    if (decideAntenna % 2 >= 1)
-                    {
-                        flatRoof.Initialize(Width, param.specialRoofStyle, null, new Vector3(1, 0, 0));
-                        flatRoof.Generate();
-                    }
-                    else
-                    {
-                        flatRoof.Initialize(Width, param.roofStyle, null, new Vector3(1, 0, 0));
-                        flatRoof.Generate();
-                    }
+
+                int decideAntenna = param.Rand.Next(111);
+
+                if (!oneStrip)
+                {
+                    flatRoof.Initialize(Width, param.roofStyle, localPattern, new Vector3(1, 0, 0));
+                    flatRoof.Generate();
                 }
-                
+                else
+                {
+                    flatRoof.Initialize(Width, param.specialRoofStyle, null, new Vector3(1, 0, 0));
+                    flatRoof.Generate();
+                }
+                //}
+
             }
         }
 
@@ -105,17 +111,11 @@ namespace Demo
 
             double randomValue = param.Rand.NextDouble();
             if (randomValue < param.RoofContinueChance || HeightRemaining <= 0)
-            { // continue with the roof
+            { 
                 Roof nextRoof = CreateSymbol<Roof>("roof");
                 nextRoof.Initialize(newWidth, newDepth, HeightRemaining, MinHeight);
-                nextRoof.Generate(param.buildDelay);
+                nextRoof.Generate();
             }
-            //else
-            //{ // continue with a stock
-            //    Stock nextStock = CreateSymbol<Stock>("stock");
-            //    nextStock.Initialize(newWidth, newDepth, HeightRemaining, MinHeight);
-            //    nextStock.Generate(param.buildDelay);
-            //}
         }
     }
 }

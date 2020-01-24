@@ -1,4 +1,9 @@
-﻿using Demo;
+﻿/*
+ https://github.com/mirrorfishmedia/ImaginaryCities
+ The source of this grid. I used his grid and I modified it to fit our need.
+ */
+
+using Demo;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;

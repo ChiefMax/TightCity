@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: OtherWallStyle
   m_EditorClassIdentifier: 
   wallParts:
-  - {fileID: -927199367670048503, guid: a8742791cd6078148864503a9b0a2a19, type: 3}
+  - {fileID: -927199367670048503, guid: b5994fc405aa13c4ebf6ff5eb1201062, type: 3}
+  - {fileID: -927199367670048503, guid: 2091174a3bedb0249be14ec3b6cc757f, type: 3}
